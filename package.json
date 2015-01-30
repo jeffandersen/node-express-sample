@@ -1,0 +1,20 @@
+{
+  "name": "node-express-sample",
+  "version": "1.0.0",
+  "description": "Sample Express.js application for purpose of building a REST API",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/jeffandersen/node-express-sample.git"
+  },
+  "author": "Jeff Andersen <@jeffandersen>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffandersen/node-express-sample/issues"
+  },
+  "homepage": "https://github.com/jeffandersen/node-express-sample",
+  "dependencies": {
+    "body-parser": "1.10.2",
+    "express": "4.11.1",
+    "pg": "4.2.0"
+  }
+}

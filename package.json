@@ -14,7 +14,14 @@
   "homepage": "https://github.com/jeffandersen/node-express-sample",
   "dependencies": {
     "body-parser": "1.10.2",
+    "ejs": "2.2.4",
     "express": "4.11.1",
+    "express-validator": "2.8.0",
+    "multer": "0.1.7",
     "pg": "4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "2.1.0",
+    "supertest": "0.15.0"
   }
 }

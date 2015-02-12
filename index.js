@@ -33,11 +33,13 @@ function lookupPhoto(req, res, next) {
 
 function validatePhoto(req, res, next) {
   if (!req.files.photo) {
+    res.statusCode = 400;
     return res.json({
       errors: ['File failed to upload']
     });
   }
   if (req.files.photo.truncated) {
+    res.statusCode = 400;
     return res.json({
       errors: ['File too large']
     });

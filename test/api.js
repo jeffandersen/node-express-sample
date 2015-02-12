@@ -15,22 +15,23 @@ describe('Tutorial REST API', function() {
 
       var validPhotoResource = {
         description: 'Photo created on ' + Date.now(),
-        filepath: '/path/to/photo.jpg',
         album_id: 1
       };
 
       request(app)
         .post('/photo')
-        .send(validPhotoResource)
+        .field('description', validPhotoResource.description)
+        .field('album_id', validPhotoResource.album_id)
+        .attach('photo', __dirname + '/abe.jpg')
         .expect(201)
         .end(function(err, res) {
           if (err) {
             return done(err);
           }
 
+          assert.ok(res.body.id);
           assert.equal(res.body.description, validPhotoResource.description);
           assert.equal(res.body.album_id, validPhotoResource.album_id);
-          assert.equal(res.body.filepath, validPhotoResource.filepath);
           done();
         });
     });
@@ -43,7 +44,8 @@ describe('Tutorial REST API', function() {
 
       request(app)
         .post('/photo')
-        .send(badPhotoResource)
+        .attach('photo', __dirname + '/abe.jpg')
+        .field('album_id', badPhotoResource.album_id)
         .expect(400)
         .end(function(err, res) {
           if (err) {

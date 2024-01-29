@@ -13,8 +13,8 @@
   },
   "homepage": "https://github.com/jeffandersen/node-express-sample",
   "dependencies": {
-    "body-parser": "1.10.2",
-    "express": "4.11.1",
-    "pg": "4.2.0"
+    "body-parser": "1.19.2",
+    "express": "4.17.3",
+    "pg": "8.4.0"
   }
 }
